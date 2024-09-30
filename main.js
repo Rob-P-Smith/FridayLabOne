@@ -9,6 +9,27 @@ const uniqueNums = lodash.uniq(array);
 console.log(uniqueNums);
 console.log(chalk.yellow.bgRed(uniqueNums));
 
-console.log(chalk.blueBright.bgCyan("Hello, with chalk and colors!"));
+console.log(chalk.red.bgBlack("Welcome to our application!"));
+console.log(chalk.redBright.bgGreen("Hello, user!"));
+console.log(chalk.redBright.bgRed("This will be printed on a red background."));
+console.log(chalk.redBright.bgGreen("And this will be printed with a green background."));
+
+function displayNumbers() {
+    let i = 1;
+    function delay(num) {
+        return new Promise(resolve => setTimeout(() => resolve(), num * 1000));
+    }
+
+    async function main() {
+        while (i <= 10) {
+            await delay(1);
+            console.log(i);
+            i++;
+        }
+    }
+    main();
+}
+
+displayNumbers();
 
 
